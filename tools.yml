@@ -1,0 +1,27 @@
+---
+
+- hosts: RHEL
+  become: true
+  tasks:
+
+
+  - name: install tools
+    tags: tools,redhat,networking
+    dnf:
+      name:
+        - nmap
+        - iputils
+      update_cache: yes
+
+
+- hosts: DEBIAN
+  become: true
+  tasks:
+
+
+  - name: install tools
+    tags: tools,redhat,networking
+    apt:
+      name:
+        - nmap
+      update_cache: yes        
